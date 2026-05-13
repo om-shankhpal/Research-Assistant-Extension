@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Research Assistant</title>
+
+    <link rel="stylesheet" href="side_panel.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header-top">
+          <h1>Research Assistant</h1>
+          <button id="themeToggleBtn" class="theme-toggle" title="Toggle Theme">
+            Light
+          </button>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="summarizedBtn">Summarize</button>
+        <button id="suggestBtn">Suggest Topics</button>
+        <button id="clearBtn">Clear Response</button>
+      </div>
+
+      <div id="results"></div>
+
+      <div class="notes">
+        <h3>Research Notes</h3>
+
+        <textarea id="notes" placeholder="Take Notes Here..."></textarea>
+
+        <div class="notes-buttons">
+          <button id="saveNotesBtn">Save Notes</button>
+
+          <button id="downloadNotesBtn">Download Notes</button>
+
+          <button id="clearNotesBtn">Clear Notes</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="side_panel.js"></script>
+  </body>
+</html>

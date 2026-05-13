@@ -1,0 +1,277 @@
+/* side_panel.css */
+
+* {
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+:root {
+  --primary-color: #87ceeb;
+  --secondary-color: #e0f6ff;
+  --text-color: #0a3a4a;
+  --border-color: #b0e0ff;
+  --button-hover: #5dade2;
+  --bg-color: #ffffff;
+}
+
+body.dark-theme {
+  --primary-color: #4a90e2;
+  --secondary-color: #1a1a2e;
+  --text-color: #e0e0e0;
+  --border-color: #2d3561;
+  --button-hover: #3a7bc8;
+  --bg-color: #0f1419;
+}
+
+body {
+  background: var(--bg-color);
+
+  color: var(--text-color);
+
+  width: 100%;
+
+  min-height: 100vh;
+
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 16px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+
+  max-width: 500px;
+
+  margin: 0 auto;
+}
+
+/* Header */
+
+.header {
+  text-align: center;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.header h1 {
+  font-size: 1.6rem;
+
+  font-weight: 700;
+
+  color: var(--text-color);
+
+  flex: 1;
+}
+
+.theme-toggle {
+  background: var(--primary-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  outline: none;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.theme-toggle:hover {
+  background: var(--button-hover);
+}
+
+/* Action Buttons */
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+#summarizedBtn,
+#suggestBtn,
+#clearBtn {
+  background: var(--primary-color);
+  color: var(--text-color);
+  padding: 12px 18px;
+  border-radius: 12px;
+  flex: 1;
+  border: 1px solid var(--border-color);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+}
+
+#summarizedBtn:hover,
+#suggestBtn:hover {
+  background: var(--button-hover);
+}
+
+/* Results Section */
+
+#results {
+  background: var(--secondary-color);
+
+  border-radius: 12px;
+
+  padding: 16px;
+
+  min-height: 80px;
+
+  overflow-y: auto;
+
+  border: 1px solid var(--border-color);
+}
+
+#results:empty::before {
+  content: "Your summarized results will appear here...";
+
+  color: #666;
+
+  font-size: 0.9rem;
+}
+
+#results.loading {
+  border-color: var(--button-hover);
+}
+
+.loading-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 80px;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.loading-dots {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.loading-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-color);
+  opacity: 0.3;
+  animation: loadingDot 1s infinite ease-in-out;
+}
+
+.loading-dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.loading-dots span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes loadingDot {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Notes Section */
+
+.notes {
+  background: var(--secondary-color);
+
+  padding: 16px;
+
+  border-radius: 12px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+
+  border: 1px solid var(--border-color);
+}
+
+.notes h3 {
+  font-size: 1rem;
+
+  color: var(--text-color);
+}
+
+#notes {
+  width: 100%;
+
+  min-height: 120px;
+
+  resize: vertical;
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 8px;
+
+  padding: 12px;
+
+  font-size: 0.95rem;
+
+  background: var(--bg-color);
+
+  color: var(--text-color);
+}
+
+#notes:focus {
+  border-color: var(--primary-color);
+
+  outline: none;
+}
+
+/* Notes Buttons */
+
+.notes-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+#saveNotesBtn,
+#downloadNotesBtn,
+#clearNotesBtn {
+  background: var(--primary-color);
+
+  color: var(--text-color);
+
+  padding: 10px 14px;
+
+  border-radius: 8px;
+
+  flex: 1;
+
+  border: 1px solid var(--border-color);
+}
+
+#saveNotesBtn:hover,
+#downloadNotesBtn:hover,
+#clearNotesBtn:hover {
+  background: var(--button-hover);
+}
